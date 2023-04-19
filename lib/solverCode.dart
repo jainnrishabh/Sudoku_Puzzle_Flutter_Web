@@ -2,7 +2,7 @@ import 'dart:collection';
 
 import 'package:project2website/csp.dart';
 
-class AC3Fucntions {
+class SolverFunction {
   bool revise(CSP csp, String xi, String xj) {
     try {
       bool revised = false;

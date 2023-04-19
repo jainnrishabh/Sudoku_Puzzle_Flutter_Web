@@ -1,6 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:project2website/ac3.dart';
+import 'package:project2website/solverCode.dart';
 import 'package:project2website/csp.dart';
 import 'package:project2website/sudokuCell.dart';
 
@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
   solvePuzzle() {
     try {
       csp = CSP(selectedValue);
-      finalResult = AC3Fucntions().backtrackingSearch(csp);
+      finalResult = SolverFunction().backtrackingSearch(csp);
       print(finalResult);
       setState(() {});
     } catch (e) {
