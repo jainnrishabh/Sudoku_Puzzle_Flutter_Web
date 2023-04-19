@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
+options: "032b53001e4721c6a43ffaf3c1c68306d3f25100b3cbf841fdbbd33b2028e470"
+build_start_time: [1681841150, 242880000]
+build_end_time: [1681841157, 741423000]
+inputs:
+  ? "/Users/rishabhjain/Documents/Masters/SEM 2/Aritificial Intelligence/project2website/macos/Flutter/GeneratedPluginRegistrant.swift"
+  : [1681841134, 786534211]
+  "/Users/rishabhjain/Documents/Masters/SEM 2/Aritificial Intelligence/project2website/macos/Runner/AppDelegate.swift": [1664125452, 867048061]
+  "/Users/rishabhjain/Documents/Masters/SEM 2/Aritificial Intelligence/project2website/macos/Runner/MainFlutterWindow.swift": [1664125452, 869340211]
