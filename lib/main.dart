@@ -58,10 +58,42 @@ class _MyHomePageState extends State<MyHomePage> {
       csp = CSP(selectedValue);
       finalResult = SolverFunction().backtrackingSearch(csp);
       print(finalResult);
+
+      finalResult != null
+          ? _showMyDialog('Congratulations!!')
+          : _showMyDialog('Sorry the puzzle is not solved');
+      finalResult == null ? selectedValue = null : null;
       setState(() {});
     } catch (e) {
       print(e);
     }
+  }
+
+  Future<void> _showMyDialog(String message) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(finalResult != null ? 'Hurray!!' : 'Sorry'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(message),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Close'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -85,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: const [
                             Icon(
                               Icons.list,
-                              size: 16,
+                              size: 20,
                               color: Colors.yellow,
                             ),
                             SizedBox(
@@ -93,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             Expanded(
                               child: Text(
-                                'Select Item',
+                                'Select Puzzle',
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
@@ -109,7 +141,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                   value: item,
                                   child: Text(
                                     "Puzzle " +
-                                        (puzzles.indexOf(item).toString()),
+                                        ((puzzles.indexOf(item) + 1)
+                                            .toString()),
                                     style: const TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
@@ -184,7 +217,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: getTableRows(""),
             ),
           ),
-          selectedValue != ""
+          selectedValue != null
               ? Container(
                   margin: EdgeInsets.all(25),
                   child: FlatButton(
@@ -196,6 +229,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     textColor: Colors.white,
                     onPressed: () {
                       selectedValue = null;
+                      finalResult = null;
                       setState(() {});
                     },
                   ),

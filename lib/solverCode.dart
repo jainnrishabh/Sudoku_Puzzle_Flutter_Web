@@ -1,5 +1,4 @@
 import 'dart:collection';
-
 import 'package:project2website/csp.dart';
 
 class SolverFunction {
