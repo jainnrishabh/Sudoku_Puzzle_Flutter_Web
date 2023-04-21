@@ -1,9 +1,17 @@
-2023/04/19-16:17:36.219 3c03 Reusing MANIFEST /private/var/folders/dw/wlx_tjcd2v7fybk45dtdm6640000gn/T/flutter_tools.P7yjNX/flutter_tools_chrome_device.G5eu8I/Default/Session Storage/MANIFEST-000001
-2023/04/19-16:17:36.220 3c03 Recovering log #17
-2023/04/19-16:17:36.221 3c03 Reusing old log /private/var/folders/dw/wlx_tjcd2v7fybk45dtdm6640000gn/T/flutter_tools.P7yjNX/flutter_tools_chrome_device.G5eu8I/Default/Session Storage/000017.log 
-2023/04/19-16:17:36.222 3c03 Delete type=0 #6
-2023/04/19-16:17:36.222 3c03 Delete type=0 #12
-2023/04/19-16:17:36.222 3c03 Delete type=2 #7
-2023/04/19-16:17:36.222 3c03 Delete type=2 #13
-2023/04/19-16:17:36.222 3c03 Delete type=2 #10
-2023/04/19-16:17:36.222 3c03 Delete type=0 #9
+2023/04/20-22:28:07.847 2d03 Reusing MANIFEST /private/var/folders/dw/wlx_tjcd2v7fybk45dtdm6640000gn/T/flutter_tools.XPSgTE/flutter_tools_chrome_device.Gp7jRZ/Default/Session Storage/MANIFEST-000001
+2023/04/20-22:28:07.848 2d03 Recovering log #33
+2023/04/20-22:28:07.849 2d03 Reusing old log /private/var/folders/dw/wlx_tjcd2v7fybk45dtdm6640000gn/T/flutter_tools.XPSgTE/flutter_tools_chrome_device.Gp7jRZ/Default/Session Storage/000033.log 
+2023/04/20-22:28:07.850 2d03 Delete type=0 #6
+2023/04/20-22:28:07.850 2d03 Delete type=0 #12
+2023/04/20-22:28:07.850 2d03 Delete type=0 #17
+2023/04/20-22:28:07.850 2d03 Delete type=2 #28
+2023/04/20-22:28:07.851 2d03 Delete type=2 #7
+2023/04/20-22:28:07.851 2d03 Delete type=2 #13
+2023/04/20-22:28:07.852 2d03 Delete type=2 #10
+2023/04/20-22:28:07.852 2d03 Delete type=2 #22
+2023/04/20-22:28:07.852 2d03 Delete type=2 #25
+2023/04/20-22:28:07.852 2d03 Delete type=2 #19
+2023/04/20-22:28:07.853 2d03 Delete type=0 #27
+2023/04/20-22:28:07.853 2d03 Delete type=0 #24
+2023/04/20-22:28:07.853 2d03 Delete type=0 #21
+2023/04/20-22:28:07.853 2d03 Delete type=0 #9

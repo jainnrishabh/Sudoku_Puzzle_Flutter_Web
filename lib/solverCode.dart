@@ -9,9 +9,7 @@ class SolverFunction {
 
       for (String x in values) {
         if (!isConsistent(csp, x, xi, xj)) {
-          List strs = csp.values[xi].split('');
-          strs.remove(x);
-          csp.values[xi] = strs.join();
+          csp.values[xi].replaceAll(x, '');
           revised = true;
         }
       }
@@ -54,29 +52,40 @@ class SolverFunction {
 
   bool ac3(CSP csp) {
     try {
+      //q = queue.Queue()
       Queue<List<String>> q = Queue();
 
-      for (String xj in csp.constraints.keys) {
-        q.add([xj]);
+      // for arc in csp.constraints:
+      for (String arc in csp.constraints.keys) {
+        // q.put(arc)
+        q.add([arc]);
       }
 
+      // while not q.empty():
       while (q.isNotEmpty) {
+        // 	(Xi, Xj) = q.get()
         List<String> arc = q.removeFirst();
         String Xi = arc[0].split(",")[0];
         String Xj = arc[0].split(",")[1];
 
+        // if Revise(csp, Xi, Xj):
         if (revise(csp, Xi, Xj)) {
-          if (csp.values[arc[0].split(",")[0]].isEmpty) {
+          //if len(csp.values[Xi]) == 0:
+          if (csp.values[Xi].isEmpty) {
+            // return False
             return false;
           }
 
           csp.neighbors[Xi].remove(Xj);
 
+          // for Xk in (csp.neighbors[Xi] - set(Xj)):
           for (String xk in csp.neighbors[Xi]) {
-            q.add([xk]);
+            // q.put((Xk, Xi))
+            q.add(["$xk,$Xi"]);
           }
         }
       }
+      // return True
       return true;
     } catch (e) {
       print(e);
@@ -84,6 +93,9 @@ class SolverFunction {
   }
 
   String minimumRemainingValue(Map<String, String> assignment, CSP csp) {
+    //   unassigned_variables = dict((squares, len(csp.values[squares])) for squares in csp.values if squares not in assignment.keys())
+    // mrv = min(unassigned_variables, key=unassigned_variables.get)
+    // return mrv
     List<String> unassignedVariables = csp.values.keys
         .toList()
         .where((square) => !assignment.containsKey(square))
@@ -105,24 +117,26 @@ class SolverFunction {
   // The recursive function which assigns value using backtracking.
   Map<String, dynamic> backtrack(Map<String, String> assignment, CSP csp) {
     try {
+      csp.finalAssignments.insert(csp.finalAssignments.length, {...assignment});
+
       if (assignment.keys.length == csp.squares.length) {
         return assignment;
       }
 
       String mrv = minimumRemainingValue(assignment, csp);
-      Map<String, dynamic> domain = csp.values;
+      Map<String, dynamic> domain = new Map.from(csp.values);
 
-      for (var value in csp.values[mrv].split(",")) {
+      for (var value in csp.values[mrv].split("")) {
         if (isConsistentBackTrack(mrv, value, assignment, csp)) {
           assignment[mrv] = value;
           Map<String, String> inferences = {};
           inferences = inference(assignment, inferences, csp, mrv, value);
-          if (inferences != null) {
-            var result = backtrack(assignment, csp);
-            if (result != null) {
-              return result;
-            }
+          // if (inferences != null) {
+          var result = backtrack(assignment, csp);
+          if (result != null) {
+            return result;
           }
+          // }
           assignment.remove(mrv);
           csp.values = domain;
         }
@@ -135,12 +149,16 @@ class SolverFunction {
 
   bool isConsistentBackTrack(
       String mrv, String value, Map<String, String> assignment, CSP csp) {
-    for (String neighbor in csp.neighbors[mrv]) {
-      if (assignment.containsKey(neighbor) && assignment[neighbor] == value) {
-        return false;
+    try {
+      for (String neighbor in csp.neighbors[mrv]) {
+        if (assignment.containsKey(neighbor) && assignment[neighbor] == value) {
+          return false;
+        }
       }
+      return true;
+    } catch (E) {
+      print(E);
     }
-    return true;
   }
 
   // def Inference(assignment, inferences, csp, var, value):

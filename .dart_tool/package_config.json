@@ -62,6 +62,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_carousel_widget",
+      "rootUri": "file:///Users/rishabhjain/.pub-cache/hosted/pub.dartlang.org/flutter_carousel_widget-2.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///Users/rishabhjain/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1",
       "packageUri": "lib/",
@@ -102,6 +108,12 @@
       "rootUri": "file:///Users/rishabhjain/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "page_transition",
+      "rootUri": "file:///Users/rishabhjain/.pub-cache/hosted/pub.dartlang.org/page_transition-1.1.7+6",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
     },
     {
       "name": "path",
@@ -164,7 +176,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2023-04-18T20:50:24.962988Z",
+  "generated": "2023-04-21T01:57:44.158777Z",
   "generator": "pub",
   "generatorVersion": "2.17.0"
 }

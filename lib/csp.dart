@@ -5,9 +5,9 @@ class CSP {
   Map<String, dynamic> domain;
   Map<String, dynamic> values;
   List<dynamic> unitlist;
-
   Map<dynamic, dynamic> units;
   Map<dynamic, dynamic> neighbors;
+  List finalAssignments;
   var constraints;
 
   String rows = "123456789";
@@ -97,6 +97,7 @@ class CSP {
     values = getDict(grid);
     unitlist = getUnitList();
     units = getUnits();
+    finalAssignments = [];
     neighbors = getNeighbors();
     constraints = Constants.constraints;
   }
