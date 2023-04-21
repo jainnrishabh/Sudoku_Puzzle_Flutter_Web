@@ -132,103 +132,95 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 selectedValue == null || selectedValue == ""
-                    ? Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Center(
-                          child: DropdownButtonHideUnderline(
-                            child: DropdownButton2(
-                              isExpanded: true,
-                              hint: Row(
-                                children: const [
-                                  Icon(
-                                    Icons.list,
-                                    size: 20,
-                                    color: Colors.yellow,
-                                  ),
-                                  SizedBox(
-                                    width: 4,
-                                  ),
-                                  Expanded(
-                                    child: Text(
-                                      'Select Puzzle',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.yellow,
-                                      ),
-                                      overflow: TextOverflow.ellipsis,
+                    ? Center(
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton2(
+                            isExpanded: true,
+                            hint: Row(
+                              children: const [
+                                Icon(
+                                  Icons.list,
+                                  size: 20,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 4,
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    'Select Puzzle',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
                                     ),
+                                    overflow: TextOverflow.ellipsis,
                                   ),
-                                ],
-                              ),
-                              items: puzzles
-                                  .map((item) => DropdownMenuItem<String>(
-                                        value: item,
-                                        child: Text(
-                                          "Puzzle " +
-                                              ((puzzles.indexOf(item) + 1)
-                                                  .toString()),
-                                          style: const TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                          overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
+                            items: puzzles
+                                .map((item) => DropdownMenuItem<String>(
+                                      value: item,
+                                      child: Text(
+                                        "Puzzle " +
+                                            ((puzzles.indexOf(item) + 1)
+                                                .toString()),
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
                                         ),
-                                      ))
-                                  .toList(),
-                              value: selectedValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  selectedValue = value as String;
-                                });
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ))
+                                .toList(),
+                            value: selectedValue,
+                            onChanged: (value) {
+                              setState(() {
+                                selectedValue = value as String;
+                              });
 
-                                solvePuzzle();
-                              },
-                              buttonStyleData: ButtonStyleData(
-                                height: 50,
-                                width: 160,
-                                padding:
-                                    const EdgeInsets.only(left: 14, right: 14),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(14),
-                                  border: Border.all(
-                                    color: Colors.black26,
-                                  ),
-                                  color: Colors.redAccent,
-                                ),
-                                elevation: 2,
+                              solvePuzzle();
+                            },
+                            buttonStyleData: ButtonStyleData(
+                              height: 45,
+                              width: 160,
+                              padding:
+                                  const EdgeInsets.only(left: 14, right: 14),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(14),
+                                color: Colors.black54,
                               ),
-                              iconStyleData: const IconStyleData(
-                                icon: Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                ),
-                                iconSize: 14,
-                                iconEnabledColor: Colors.yellow,
-                                iconDisabledColor: Colors.grey,
+                            ),
+                            iconStyleData: const IconStyleData(
+                              icon: Icon(
+                                Icons.arrow_forward_ios_outlined,
                               ),
-                              dropdownStyleData: DropdownStyleData(
-                                maxHeight: 200,
-                                width: 200,
-                                padding: null,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(14),
-                                  color: Colors.redAccent,
-                                ),
-                                elevation: 8,
-                                offset: const Offset(-20, 0),
-                                scrollbarTheme: ScrollbarThemeData(
-                                  radius: const Radius.circular(40),
-                                  thickness:
-                                      MaterialStateProperty.all<double>(6),
-                                  thumbVisibility:
-                                      MaterialStateProperty.all<bool>(true),
-                                ),
+                              iconSize: 14,
+                              iconEnabledColor: Colors.white,
+                              iconDisabledColor: Colors.grey,
+                            ),
+                            dropdownStyleData: DropdownStyleData(
+                              maxHeight: 300,
+                              width: 200,
+                              padding: null,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(14),
+                                color: Colors.black,
                               ),
-                              menuItemStyleData: const MenuItemStyleData(
-                                height: 40,
-                                padding: EdgeInsets.only(left: 14, right: 14),
+                              elevation: 8,
+                              offset: const Offset(-20, 0),
+                              scrollbarTheme: ScrollbarThemeData(
+                                radius: const Radius.circular(40),
+                                thickness: MaterialStateProperty.all<double>(6),
+                                thumbVisibility:
+                                    MaterialStateProperty.all<bool>(true),
                               ),
+                            ),
+                            menuItemStyleData: const MenuItemStyleData(
+                              height: 40,
+                              padding: EdgeInsets.only(left: 14, right: 14),
                             ),
                           ),
                         ),
@@ -237,7 +229,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         margin: EdgeInsets.all(25),
                         child: FlatButton(
                           child: Text(
-                            'Start Again',
+                            'Reset',
                             style: TextStyle(fontSize: 20.0),
                           ),
                           color: Colors.blueAccent,
@@ -259,12 +251,11 @@ class _MyHomePageState extends State<MyHomePage> {
                             style: TextStyle(fontSize: 20.0),
                           ),
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.redAccent,
+                            primary: Colors.black54,
                             minimumSize: Size(160, 50),
                             padding: const EdgeInsets.only(left: 14, right: 14),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(13.0),
-                              side: BorderSide(color: Colors.red),
                             ),
                           ),
                           onPressed: () {
@@ -309,7 +300,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   )
                 : Container(),
-            Text("Final Result"),
+            selectedValue != null ? Text("Final Result:") : Container(),
             Container(
               width: 500,
               height: 500,
