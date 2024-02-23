@@ -227,13 +227,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       )
                     : Container(
                         margin: EdgeInsets.all(25),
-                        child: FlatButton(
+                        child: ElevatedButton(
                           child: Text(
                             'Reset',
                             style: TextStyle(fontSize: 20.0),
                           ),
-                          color: Colors.blueAccent,
-                          textColor: Colors.white,
+                          // color: Colors.blueAccent,
+                          // textColor: Colors.white,
                           onPressed: () {
                             selectedValue = null;
                             finalResult = null;
