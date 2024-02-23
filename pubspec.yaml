@@ -31,7 +31,7 @@ dependencies:
     sdk: flutter
   dropdown_button2: ^2.1.0
   json_annotation: ^4.7.0
-  page_transition: ^1.1.6
+  page_transition: ^2.1.0
   flutter_carousel_widget: ^2.0.0
 
 
